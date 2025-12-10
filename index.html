@@ -2,54 +2,73 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>나의 툴 연구소</title>
-    <style>
-        body {
-            font-family: 'Apple SD Gothic Neo', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding-top: 100px;
-            background-color: #f0f2f5;
-        }
-        .container {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 { color: #333; margin-bottom: 10px; }
-        p { color: #666; margin-bottom: 30px; }
-        
-        /* 버튼 디자인 */
-        .btn-link {
-            display: block; /* 한 줄을 꽉 채우게 */
-            background-color: #6c5ce7;
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none; /* 밑줄 제거 */
-            border-radius: 10px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            transition: 0.3s;
-        }
-        .btn-link:hover {
-            background-color: #5649c0; /* 마우스 올렸을 때 색 변화 */
-            transform: translateY(-2px); /* 살짝 떠오르는 효과 */
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 창작 연구소</h1>
-        <p>심플하고 효율적인 도구들을 연구하고 배포합니다.</p>
-        
-        <a href="https://simple-tool1.pages.dev/">
-            ✨ 심플 글자수 계산기 바로가기
-        </a>
-        
+    <nav class="nav">
+        <div class="lang-selector">
+            <button class="lang-btn" id="langBtn">
+                <span id="currentLang">한국어</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <button data-lang="ko">한국어</button>
+                <button data-lang="en">English</button>
+                <button data-lang="ja">日本語</button>
+                <button data-lang="zh">中文</button>
+                <button data-lang="fr">Français</button>
+                <button data-lang="de">Deutsch</button>
+                <button data-lang="es">Español</button>
+                <button data-lang="ru">Русский</button>
+                <button data-lang="ar">العربية</button>
+            </div>
         </div>
+        <button class="theme-btn" id="themeBtn" aria-label="테마 전환">
+            <span class="theme-icon"></span>
+        </button>
+    </nav>
+
+    <main class="main">
+        <header class="header">
+            <p class="intro" data-i18n="intro">사이트와 툴을 만들고 있습니다</p>
+            <h1 class="title" data-i18n="title">Playground</h1>
+        </header>
+
+        <section class="works">
+            <a href="https://heliocentrism.pages.dev" target="_blank" class="work-item">
+                <span class="work-number">01</span>
+                <h2 class="work-title" data-i18n="project1">지구는 돈다</h2>
+                <p class="work-desc" data-i18n="project1_desc">지구의 자전을 시각적으로 표현</p>
+                <span class="work-arrow">→</span>
+            </a>
+
+            <a href="https://simple-tool1.pages.dev" target="_blank" class="work-item">
+                <span class="work-number">02</span>
+                <h2 class="work-title" data-i18n="project2">글자수 계산기</h2>
+                <p class="work-desc" data-i18n="project2_desc">텍스트의 글자 수를 계산</p>
+                <span class="work-arrow">→</span>
+            </a>
+
+            <div class="work-item coming-soon">
+                <span class="work-number">03</span>
+                <h2 class="work-title" data-i18n="coming_soon">준비 중</h2>
+                <p class="work-desc" data-i18n="coming_soon_desc">새로운 프로젝트</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="copyright">© 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
